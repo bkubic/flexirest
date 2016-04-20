@@ -267,7 +267,7 @@ module Flexirest
     def append_get_parameters
       if @get_params.any?
         if @method[:options][:params_encoder] == :flat
-          @url += "?" + URI.encode(@get_params)
+          @url += "?" + URI.encode_www_form(@get_params)
         else
           @url += "?" + @get_params.to_query
         end
